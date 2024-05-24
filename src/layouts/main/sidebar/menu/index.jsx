@@ -1,50 +1,51 @@
 import classNames from "classnames";
 import { NavLink } from "react-router-dom";
+import { mainMenu } from "../../../../utils/consts";
 
 export const Menu = () => {
   return (
     <nav className="mt-0.5 mb-1">
-      <NavLink to="/" className="py-1 block group">
-        {({ isActive }) => (
-          <div
-            className={classNames(
-              "p-3 rounded-full inline-flex items-center gap-5 transition-colors group-hover:bg-[#eff3f41a]",
-              {
-                "font-bold": isActive,
-              }
-            )}
-          >
-            {!isActive && (
-              <svg
-                viewBox="0 0 24 24"
-                width={26.25}
-                height={26.25}
-                className="block"
+      {mainMenu &&
+        mainMenu.map((menu, index) => (
+          <NavLink key={index} to={menu.path} className="py-[3px] block group">
+            {({ isActive }) => (
+              <div
+                className={classNames(
+                  "p-3 rounded-full inline-flex items-center gap-5 transition-colors group-hover:bg-[#eff3f41a]",
+                  {
+                    "font-bold": isActive,
+                  }
+                )}
               >
-                <path
-                  fill="#e7e9ea"
-                  d="M21.591 7.146L12.52 1.157c-.316-.21-.724-.21-1.04 0l-9.071 5.99c-.26.173-.409.456-.409.757v13.183c0 .502.418.913.929.913h6.638c.511 0 .929-.41.929-.913v-7.075h3.008v7.075c0 .502.418.913.929.913h6.639c.51 0 .928-.41.928-.913V7.904c0-.301-.158-.584-.408-.758zM20 20l-4.5.01.011-7.097c0-.502-.418-.913-.928-.913H9.44c-.511 0-.929.41-.929.913L8.5 20H4V8.773l8.011-5.342L20 8.764z"
-                />
-              </svg>
-            )}
+                <div className="w-[26.25px] h-[26.25px] relative">
+                  {menu?.notification && (
+                    <span className="w-[18px] h-[18px] absolute -top-1.5 -right-1 flex items-center justify-center text-[11px] bg-[#1d9bf0] rounded-full">
+                      {menu?.notification}
+                    </span>
+                  )}
+                  {!isActive && menu.icon?.passive}
+                  {isActive && menu.icon?.active}
+                </div>
 
-            {isActive && (
-              <svg
-                viewBox="0 0 24 24"
-                width={26.25}
-                height={26.25}
-                className="block"
-              >
-                <path
-                  fill="#e7e9ea"
-                  d="M21.591 7.146L12.52 1.157c-.316-.21-.724-.21-1.04 0l-9.071 5.99c-.26.173-.409.456-.409.757v13.183c0 .502.418.913.929.913H9.14c.51 0 .929-.41.929-.913v-7.075h3.909v7.075c0 .502.417.913.928.913h6.165c.511 0 .929-.41.929-.913V7.904c0-.301-.158-.584-.408-.758z"
-                />
-              </svg>
+                <div className="pr-4 text-xl">{menu.title}</div>
+              </div>
             )}
-            <div className="pr-4 text-xl">Home</div>
+          </NavLink>
+        ))}
+      <button className="py-[3px] block group">
+        <div className="p-3 rounded-full inline-flex items-center gap-5 transition-colors group-hover:bg-[#eff3f41a]">
+          <div className="w-[26.25px] h-[26.25px] relative">
+            <svg
+              viewBox="0 0 24 24"
+              width={26.25} height={26.25} className="block"
+            >
+                <path fill="#e7e9ea" d="M3.75 12c0-4.56 3.69-8.25 8.25-8.25s8.25 3.69 8.25 8.25-3.69 8.25-8.25 8.25S3.75 16.56 3.75 12zM12 1.75C6.34 1.75 1.75 6.34 1.75 12S6.34 22.25 12 22.25 22.25 17.66 22.25 12 17.66 1.75 12 1.75zm-4.75 11.5c.69 0 1.25-.56 1.25-1.25s-.56-1.25-1.25-1.25S6 11.31 6 12s.56 1.25 1.25 1.25zm9.5 0c.69 0 1.25-.56 1.25-1.25s-.56-1.25-1.25-1.25-1.25.56-1.25 1.25.56 1.25 1.25 1.25zM13.25 12c0 .69-.56 1.25-1.25 1.25s-1.25-.56-1.25-1.25.56-1.25 1.25-1.25 1.25.56 1.25 1.25z" />
+            </svg>
           </div>
-        )}
-      </NavLink>
+
+          <div className="pr-4 text-xl">More</div>
+        </div>
+      </button>
     </nav>
   );
 };

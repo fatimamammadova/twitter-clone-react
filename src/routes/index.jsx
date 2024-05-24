@@ -1,7 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import { Home } from "../pages/Home";
 import { Explore } from "../pages/Explore";
-import { Notification } from "../pages/Notification";
+import {  Notifications } from "../pages/Notifications";
 import { NotFound } from "../pages/NotFound";
 import { MainLayout } from "../layouts/main";
 
@@ -19,8 +19,8 @@ const routes = createBrowserRouter([
           element: <Explore />,
         },
         {
-          path: "/notification",
-          element: <Notification />,
+          path: "/notifications",
+          element: <Notifications />,
         }
     ]
   },

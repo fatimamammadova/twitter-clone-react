@@ -6,6 +6,4 @@ import "./assets/css/tailwind.css"
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <RouterProvider router={routes}/>
-
-  // <>SALAM</>R
 )
