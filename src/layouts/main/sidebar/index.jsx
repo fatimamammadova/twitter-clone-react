@@ -6,6 +6,9 @@ export const Sidebar = () => {
         <aside className="w-[275px] min-h-screen">
             <Logo/>
             <Menu/>
+            <div>
+                test
+            </div>
         </aside>
     )
 }
