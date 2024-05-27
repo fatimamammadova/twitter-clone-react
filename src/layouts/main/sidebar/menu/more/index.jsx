@@ -5,7 +5,7 @@ export const More = () => {
   return (
     <Popover className="relative">
       <PopoverButton className="py-[3px] block group outline-none">
-        <button>
+        <div>
           <div className="p-3 rounded-full inline-flex items-center gap-5 transition-colors group-hover:bg-[#eff3f41a]">
             <div className="w-[26.25px] h-[26.25px] relative">
               <svg
@@ -23,7 +23,7 @@ export const More = () => {
 
             <div className="pr-4 text-xl">More</div>
           </div>
-        </button>
+        </div>
       </PopoverButton>
       <PopoverPanel className="w-[318px] absolute bottom-0 left-0 bg-black shadow-box rounded-xl overflow-hidden">
         {morePopover &&

@@ -12,7 +12,7 @@ export const Account = () => {
   return (
     <div className="mt-auto">
       <Popover className="relative">
-        <PopoverButton className="my-3 p-3 rounded-full hover:bg-[#eff3f41a] w-full flex items-center text-left outline-none">
+        <PopoverButton className="my-3 p-3 rounded-full hover:bg-[#eff3f41a] w-full flex items-center text-left transition-colors outline-none">
           <img
             src={account?.avatar}
             className="w-10 h-10 rounded-full"
@@ -44,14 +44,6 @@ export const Account = () => {
         >
           <PopoverPanel className="absolute bottom-full mb-4 bg-black w-[300px] left-0.5 -translate-x-0.5 rounded-2xl shadow-box overflow-hidden py-3">
             {({close}) => <Settings close={close}/>}
-            {/* <svg
-            viewBox="0 0 24 24"
-            width={13}
-            height={13}
-            className="absolute -bottom-[11px] left-0.5 -translate-x-0.5 text-black rotate-180 shadow-box"
-          >
-              <path fill="currentColor" d="M22 17H2L12 6l10 11z"/>
-          </svg> */}
           </PopoverPanel>
         </Transition>
       </Popover>

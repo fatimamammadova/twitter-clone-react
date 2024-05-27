@@ -19,6 +19,3 @@ Button.propTypes = {
   size: PropTypes.oneOf(["normal", "large"]),
 };
 
-// Button.defaultProps = {
-//   size: "normal",
-// };
