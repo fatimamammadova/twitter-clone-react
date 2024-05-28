@@ -4,7 +4,7 @@ import { Menu } from "./menu";
 
 export const Sidebar = () => {
   return (
-    <aside className="w-[275px] max-h-screen min-h-screen flex flex-col px-2">
+    <aside className="w-[275px] max-h-screen min-h-screen flex flex-col px-2 sticky top-0">
       <Logo />
       <Menu />
       <Account/>

@@ -1,5 +1,5 @@
-import { PremiumCard } from "../../../components/premiumCard"
-import { Trends } from "../../../components/trends"
+import { PremiumCard } from "./premiumCard"
+import { Trends } from "./trends"
 import { Search } from "./search"
 
 export const Rightbar = () => {
